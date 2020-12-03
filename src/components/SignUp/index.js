@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { auth, handleUserProfile } from "../../firebase/utils";
+import AuthWrapper from "../AuthWrapper";
 import Button from "../forms/Button";
 import FormInput from "../forms/FormInput";
 import "./styles.scss";
@@ -39,11 +40,14 @@ function SignUp() {
       console.log(err.message);
     }
   };
-  return (
-    <div className="signup">
-      <div className="wrap">
-        <h2>Signup</h2>
 
+  const configAuthWrapper = {
+    headline: "Sign Up",
+  };
+
+  return (
+    <AuthWrapper {...configAuthWrapper}>
+      <div className="formWrap">
         {errors.length > 0 && (
           <ul>
             {errors.map((err, index) => {
@@ -52,42 +56,40 @@ function SignUp() {
           </ul>
         )}
 
-        <div className="formWrap">
-          <form onSubmit={handleFormSubmit}>
-            {/* {displayName} */}
-            <FormInput
-              type="text"
-              name="displayName"
-              value={displayName}
-              placeholder="Full Name"
-              onChange={(e) => setDisplayName(e.target.value)}
-            />
-            <FormInput
-              type="email"
-              name="email"
-              value={email}
-              placeholder="Email"
-              onChange={(e) => setEmail(e.target.value)}
-            />
-            <FormInput
-              type="password"
-              name="password"
-              value={password}
-              placeholder="Password"
-              onChange={(e) => setPassword(e.target.value)}
-            />
-            <FormInput
-              type="password"
-              name="confirmPassword"
-              value={confirmPassword}
-              placeholder="Confirm Password"
-              onChange={(e) => setConfirmPassword(e.target.value)}
-            />
-            <Button type="submit">Register</Button>
-          </form>
-        </div>
+        <form onSubmit={handleFormSubmit}>
+          {/* {displayName} */}
+          <FormInput
+            type="text"
+            name="displayName"
+            value={displayName}
+            placeholder="Full Name"
+            onChange={(e) => setDisplayName(e.target.value)}
+          />
+          <FormInput
+            type="email"
+            name="email"
+            value={email}
+            placeholder="Email"
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <FormInput
+            type="password"
+            name="password"
+            value={password}
+            placeholder="Password"
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <FormInput
+            type="password"
+            name="confirmPassword"
+            value={confirmPassword}
+            placeholder="Confirm Password"
+            onChange={(e) => setConfirmPassword(e.target.value)}
+          />
+          <Button type="submit">Register</Button>
+        </form>
       </div>
-    </div>
+    </AuthWrapper>
   );
 }
 

@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import AuthWrapper from "../AuthWrapper";
 import Button from "../forms/Button";
 import FormInput from "../forms/FormInput";
 import { auth, signInWithGoogle } from "./../../firebase/utils";
@@ -21,11 +23,14 @@ function SignIn() {
       resetForm();
     } catch (err) {}
   };
-  return (
-    <div className="signin">
-      <div className="wrap">
-        <h2>SignIn</h2>
 
+  const configAuthWrapper = {
+    headline: "Sign In",
+  };
+
+  return (
+    <>
+      <AuthWrapper {...configAuthWrapper}>
         <div className="formWrap">
           <form onSubmit={handleSubmit}>
             <FormInput
@@ -51,10 +56,14 @@ function SignIn() {
                 <Button onClick={signInWithGoogle}>Sign in with Google</Button>
               </div>
             </div>
+
+            <div className="links">
+              <Link to="/recovery">Reset Password</Link>
+            </div>
           </form>
         </div>
-      </div>
-    </div>
+      </AuthWrapper>
+    </>
   );
 }
 

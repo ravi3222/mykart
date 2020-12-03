@@ -7,7 +7,7 @@ function MainLayout({ children, user }) {
     <div>
       <Header user={user} />
       <div className="main">{children}</div>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }

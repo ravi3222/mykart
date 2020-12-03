@@ -4,12 +4,14 @@ import { Route, Switch, Redirect } from "react-router-dom";
 //layouts
 import MainLayout from "./layouts/MainLayout";
 import HomepageLayout from "./layouts/HomepageLayout";
+
 //pages
 import Homepage from "./pages/Homepage";
 import Registration from "./pages/Registration";
-import "./default.scss";
 import Login from "./pages/Login";
+import Recovery from "./pages/Recovery";
 import useAuthListener from "./hooks/use-auth-listener";
+import "./default.scss";
 
 function App() {
   const { user } = useAuthListener();
@@ -56,7 +58,14 @@ function App() {
           }
         />
 
-        <Route path="/register" component={Registration} />
+        <Route
+          path="/recovery"
+          render={() => (
+            <MainLayout>
+              <Recovery />
+            </MainLayout>
+          )}
+        />
       </Switch>
     </div>
   );

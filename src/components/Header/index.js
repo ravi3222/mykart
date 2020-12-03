@@ -25,10 +25,14 @@ function Header({ user }) {
           {!user && (
             <ul>
               <li>
-                <Link to="/register">Register</Link>
+                <Link className="header__optionsLink" to="/register">
+                  Register
+                </Link>
               </li>
               <li>
-                <Link to="/login">Login</Link>
+                <Link className="header__optionsLink" to="/login">
+                  Login
+                </Link>
               </li>
             </ul>
           )}

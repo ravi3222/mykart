@@ -1,38 +1,14 @@
-.signin {
+.socialSignIn {
+  margin: 1rem auto 0;
+}
+
+.links {
   display: block;
   width: 100%;
-  max-width: 40rem;
-  margin: 4rem auto 6rem;
-  border: 1px solid slategray;
-  box-shadow: 0 7px -7px 0 rgba(0, 0, 0, 0.75);
-  background-color: rgb(0, 0, 0);
-  //   opacity: 0.1;
+  // background-color: yellow;
+  margin: 1.5rem auto 1.5rem;
 
-  .wrap {
-    padding: 0px 10px;
-
-    h2 {
-      font-size: 2.2rem;
-      line-height: 1;
-      font-weight: 400;
-      text-transform: uppercase;
-      text-align: center;
-      display: block;
-      width: 100%;
-      padding: 1rem;
-      margin: 2rem auto 3rem;
-
-      color: white; // rgb(82, 25, 56);
-      //   background-color: skyblue;
-    }
-    span {
-      display: flex;
-      color: white;
-      justify-content: center;
-    }
-
-    .socialSignIn {
-      margin: 1rem auto 0;
-    }
+  a {
+    color: white;
   }
 }

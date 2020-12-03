@@ -48,8 +48,23 @@
         list-style-type: none;
         margin-right: 1.5rem;
 
+        &:hover {
+          // background-color: rgb(0, 142, 185);
+          color: white;
+        }
+
         &:last-child {
           margin-right: 0;
+        }
+
+        .header__optionsLink {
+          padding: 0.7rem 2.5rem;
+          border: 1px solid rgb(0, 142, 185);
+          transition: all 0.3s;
+          &:hover {
+            color: white;
+            background-color: rgb(0, 142, 185);
+          }
         }
 
         a {
@@ -58,6 +73,10 @@
           color: black;
           text-decoration: none;
           text-transform: uppercase;
+          padding: 1rem;
+        }
+        a:hover {
+          // color: white;
         }
       }
     }
