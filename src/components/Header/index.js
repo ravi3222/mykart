@@ -2,8 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./styles.scss";
 import Logo from "./../../assets/logo2.jpg";
+import { auth } from "./../../firebase/utils";
 
-function Header() {
+function Header({ user }) {
   return (
     <header className="header">
       <div className="wrap">
@@ -13,11 +14,24 @@ function Header() {
           </Link>
         </div>
         <div className="header__options">
-          <ul>
-            <li>
-              <Link to="register">Register</Link>
-            </li>
-          </ul>
+          {user && (
+            <ul>
+              <li>
+                <span onClick={() => auth.signOut()}>LogOut</span>
+              </li>
+            </ul>
+          )}
+
+          {!user && (
+            <ul>
+              <li>
+                <Link to="/register">Register</Link>
+              </li>
+              <li>
+                <Link to="/login">Login</Link>
+              </li>
+            </ul>
+          )}
         </div>
       </div>
     </header>

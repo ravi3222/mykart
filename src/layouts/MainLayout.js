@@ -2,12 +2,12 @@ import React from "react";
 import Footer from "../components/Footer";
 import Header from "./../components/Header";
 
-function MainLayout({ children }) {
+function MainLayout({ children, user }) {
   return (
     <div>
-      <Header />
+      <Header user={user} />
       <div className="main">{children}</div>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }

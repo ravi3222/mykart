@@ -1,0 +1,41 @@
+.signup {
+  display: block;
+  width: 100%;
+  max-width: 40rem;
+  margin: 4rem auto 6rem;
+  border: 1px solid slategray;
+  background-color: rgb(0, 0, 0);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+
+  //   opacity: 0.1;
+  &:hover {
+    // box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,
+    //   rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
+    //   rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  }
+  .wrap {
+    padding: 0px 10px;
+    color: yellow;
+
+    h2 {
+      font-size: 2.2rem;
+      line-height: 1;
+      font-weight: 400;
+      text-transform: uppercase;
+      text-align: center;
+      display: block;
+      width: 100%;
+      padding: 1rem;
+      margin: 0 auto;
+
+      color: white; // rgb(82, 25, 56);
+      //   background-color: skyblue;
+    }
+
+    .formWrap {
+      margin: 3rem auto 0;
+    }
+  }
+}

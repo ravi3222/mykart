@@ -2,10 +2,10 @@ import React from "react";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 
-function HomepageLayout({ children }) {
+function HomepageLayout({ children, user }) {
   return (
     <div className="fullHeight">
-      <Header />
+      <Header user={user} />
       {children}
       <Footer />
     </div>
